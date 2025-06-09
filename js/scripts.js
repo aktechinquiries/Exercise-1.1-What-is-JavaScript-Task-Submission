@@ -17,5 +17,9 @@ let repository = [
     ];
 
 for ( i = 0; i < repository.length; i++) {
-    document.write("<p>" + repository[i].name + ' ' + '(height: ' + repository[i].height + ')' + "</p>");
+    if (repository[i].height === 1.7) {
+        document.write(repository[i].name + ' ' + '(height: ' + repository[i].height + ')' + " - Wow, that's big!")
+    } else {
+        document.write("<p>" + repository[i].name + ' ' + '(height: ' + repository[i].height + ')' + "</p>");
+    }
 }
