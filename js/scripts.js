@@ -1,4 +1,4 @@
-let repository = [
+let pokemonList = [
     {
         name: "Bulbasaur", 
         height: 0.7, 
@@ -16,10 +16,10 @@ let repository = [
     }
     ];
 
-for ( i = 0; i < repository.length; i++) {
-    if (repository[i].height === 1.7) {
-        document.write(repository[i].name + ' ' + '(height: ' + repository[i].height + ')' + " - Wow, that's big!")
+for ( i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height === 1.7) {
+        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + ')' + " - Wow, that's big!")
     } else {
-        document.write("<p>" + repository[i].name + ' ' + '(height: ' + repository[i].height + ')' + "</p>");
+        document.write("<p>" + pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + ')' + "</p>");
     }
 }
