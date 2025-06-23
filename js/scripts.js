@@ -1,3 +1,6 @@
+let pokemonRepository = (function () {
+
+})();
 let pokemonList = [
     {
         name: "Bulbasaur", 
