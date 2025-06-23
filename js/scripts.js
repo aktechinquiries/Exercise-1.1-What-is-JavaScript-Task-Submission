@@ -26,6 +26,9 @@ let pokemonRepository = (function () {
     }
 })();
 
+pokemonRepository.getAll().forEach(function(pokemon) {
+    document.write("<p>" + pokemon.name + " height: " + pokemon.height + "</p>")
+});
 
 for ( i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height === 1.7) {
