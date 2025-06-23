@@ -16,6 +16,14 @@ let pokemonRepository = (function () {
             type: ["bug","fyling"]
         }
     ];
+    return {
+        add: function(){
+            pokemonList.push(pokemon);
+        },
+        getAll: function() {
+            return pokemonList;
+        }
+    }
 })();
 
 
