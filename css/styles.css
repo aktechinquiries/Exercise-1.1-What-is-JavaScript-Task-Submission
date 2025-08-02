@@ -2,3 +2,21 @@ body {
     background-color: white;
     font-family: "Lato", sans-serif;
 }
+
+.button-class {
+    background-color: #ebe5dc;
+    border: none;
+    color: #ebe5dc;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /*Safari */
+    cursor: auto;
+    background-color: #ebe5dc;
+    color: #0D0D0D;
+    border: 2px solid #24221e;
+}
