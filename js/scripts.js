@@ -33,5 +33,7 @@ pokemonRepository.getAll().forEach(function(pokemon) {
     button.innerText = "placeholder";
     button.classList.add("button-class");
     listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+
 });
 
