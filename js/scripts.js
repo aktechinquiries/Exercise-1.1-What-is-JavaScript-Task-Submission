@@ -25,6 +25,9 @@ let pokemonRepository = (function () {
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);    
     }
+    function showDetails(pokemon) {
+
+    }
     return {
         add: function(){
             pokemonList.push(pokemon);
@@ -33,7 +36,8 @@ let pokemonRepository = (function () {
             return pokemonList;
         },
         addListItem: addListItem,
-    }
+        showDetails: showDetails,
+    };
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
