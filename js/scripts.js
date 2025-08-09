@@ -16,6 +16,9 @@ let pokemonRepository = (function () {
             type: ["bug","fyling"]
         }
     ];
+    function addListItem(pokemon) {
+        
+    }
     return {
         add: function(){
             pokemonList.push(pokemon);
@@ -34,6 +37,5 @@ pokemonRepository.getAll().forEach(function(pokemon) {
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
-
 });
 
