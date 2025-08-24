@@ -9,7 +9,7 @@ let pokemonRepository = (function () {
         ) {
             pokemonList.push(pokemon);
         } else {
-            console.log("Pokemon is not corrent");
+            console.log("Pokemon is not correct");
         }  
     }
     function add(pokemon) {
