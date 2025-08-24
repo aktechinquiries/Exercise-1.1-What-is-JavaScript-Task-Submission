@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
         let button = document.createElement("button");
         button.innerText = pokemon.name;
         button.classList.add("button-class");
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(event) {
             showDetails(pokemon);
         });
         listpokemon.appendChild(button);
@@ -57,8 +57,7 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
           console.error(e);
         });
-    }
-        
+    }    
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function() {
           console.log(pokemon);
