@@ -31,13 +31,15 @@ let pokemonRepository = (function () {
     function showDetails(pokemon) {
         console.log(pokemon.name)
     }
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
+    function getAll() {
+        return pokemonList;
+    }
     return {
-        add: function(){
-            pokemonList.push(pokemon);
-        },
-        getAll: function() {
-            return pokemonList;
-        },
+        add: add,
+        getAll: getAll,
         addListItem: addListItem,
         showDetails: showDetails,
     };
