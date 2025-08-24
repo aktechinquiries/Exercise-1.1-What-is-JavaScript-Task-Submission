@@ -1,21 +1,5 @@
 let pokemonRepository = (function () {
-    let pokemonList = [
-        {
-            name: "Bulbasaur", 
-            height: 0.7, 
-            type: ["grass","poison"]
-        },
-        {
-            name: "Charizard", 
-            height: 1.7, 
-            type: ["fire","flying"]
-        },
-        {
-            name: "Butterfree", 
-            height: 1.1, 
-            type: ["bug","fyling"]
-        }
-    ];
+    let pokemonList = [];
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let listpokemon = document.createElement("li");
