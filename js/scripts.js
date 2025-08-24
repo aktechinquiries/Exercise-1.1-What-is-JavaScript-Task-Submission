@@ -11,7 +11,7 @@ let pokemonRepository = (function () {
         } else {
             console.log("Pokemon is not corrent");
         }  
-      }  
+    }  
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let listpokemon = document.createElement("li");
@@ -38,7 +38,7 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
           console.error(e);
         });
-      }    
+    }    
     function showDetails(pokemon) {
         console.log(pokemon.name)
     }
