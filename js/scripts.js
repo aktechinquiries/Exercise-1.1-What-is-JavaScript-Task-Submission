@@ -11,6 +11,12 @@ let pokemonRepository = (function () {
         } else {
             console.log("Pokemon is not corrent");
         }  
+    }
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
+    function getAll() {
+        return pokemonList;
     }  
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
@@ -63,12 +69,6 @@ let pokemonRepository = (function () {
           console.log(item);
         });  
     }   
-    function add(pokemon) {
-        pokemonList.push(pokemon);
-    }
-    function getAll() {
-        return pokemonList;
-    }
     return {
         add: add,
         getAll: getAll,
