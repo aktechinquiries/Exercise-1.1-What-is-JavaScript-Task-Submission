@@ -12,12 +12,15 @@ let pokemonRepository = (function () {
             console.log("Pokemon is not correct");
         }  
     }
+
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
+
     function getAll() {
         return pokemonList;
-    }  
+    }
+
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let listpokemon = document.createElement("li");
@@ -30,6 +33,7 @@ let pokemonRepository = (function () {
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);    
     }
+    
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
@@ -46,6 +50,7 @@ let pokemonRepository = (function () {
           console.error(e);
         });
     }
+
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -58,17 +63,20 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
           console.error(e);
         });
-    }    
+    }
+
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function() {
           console.log(pokemon);
         });
     }
+
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function() {
           console.log(item);
         });  
-    }   
+    }
+       
     return {
         add: add,
         getAll: getAll,
