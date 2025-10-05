@@ -34,6 +34,15 @@ let pokemonRepository = (function () {
         pokemonList.appendChild(listpokemon);    
     }
     
+    function showModal() {
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.classList.add('is-visible');
+    }
+    
+    document.querySelector('#show-modal').addEventListener('click', () => {
+      showModal();
+    });
+
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
@@ -76,7 +85,7 @@ let pokemonRepository = (function () {
           console.log(item);
         });  
     }
-       
+
     return {
         add: add,
         getAll: getAll,
