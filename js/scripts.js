@@ -100,6 +100,7 @@ let pokemonRepository = (function () {
       modal.appendChild(cancelButton);
     
       // We want to focus the confirmButton so that the user can simply press Enter
+      confirmButton.focus();
     }
 
     window.addEventListener('keydown', (e) => {
