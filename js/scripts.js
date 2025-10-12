@@ -37,13 +37,11 @@ let pokemonRepository = (function () {
     function showModal(title, text) {
       let modalContainer = document.querySelector('#modal-container');
     
-      // Clear all existing modal content
       modalContainer.innerHTML = '';
     
       let modal = document.createElement('div');
       modal.classList.add('modal');
     
-      // Add the new modal content
       let closeButtonElement = document.createElement('button');
       closeButtonElement.classList.add('modal-close');
       closeButtonElement.innerText = 'Close';
@@ -65,8 +63,6 @@ let pokemonRepository = (function () {
       modalContainer.classList.add('is-visible');
     
       modalContainer.addEventListener('click', (e) => {
-        // Since this is also triggered when clicking INSIDE the modal
-        // We only want to close if the user clicks directly on the overlay
         let target = e.target;
         if (target === modalContainer) {
           hideModal();
@@ -74,7 +70,7 @@ let pokemonRepository = (function () {
       });
     }
 
-    let dialogPromiseReject; // This can be set later, by showDialog
+    let dialogPromiseReject;
 
     function hideModal() {
       let modalContainer = document.querySelector('#modal-container');
@@ -89,10 +85,8 @@ let pokemonRepository = (function () {
     function showDialog(title, text) {
       showModal(title, text);
     
-      // We have defined modalContainer here
       let modalContainer = document.querySelector('#modal-container');
-    
-      // We want to add a confirm and cancel button to the modal
+
       let modal = modalContainer.querySelector('.modal');
     
       let confirmButton = document.createElement('button');
@@ -106,19 +100,16 @@ let pokemonRepository = (function () {
       modal.appendChild(confirmButton);
       modal.appendChild(cancelButton);
     
-      // We want to focus the confirmButton so that the user can simply press Enter
       confirmButton.focus();
 
-      // Return a promise that resolves when confirmed, else rejects
       return new Promise((resolve, reject) => {
         cancelButton.addEventListener('click', hideModal);
         confirmButton.addEventListener('click', () => {
-          dialogPromiseReject = null; // Reset this
+          dialogPromiseReject = null;
           hideModal();
           resolve();
         });
-      
-        // This can be used to reject from other functions
+
         dialogPromiseReject = reject;
       });   
     }
