@@ -101,6 +101,18 @@ let pokemonRepository = (function () {
     
       // We want to focus the confirmButton so that the user can simply press Enter
       confirmButton.focus();
+
+      // Return a promise that resolves when confirmed, else rejects
+      return new Promise((resolve, reject) => {
+        cancelButton.addEventListener('click', () => {
+          hideModal();
+          reject();
+        });
+        confirmButton.addEventListener('click', () => {
+          hideModal();
+          resolve();
+        })
+      });      
     }
 
     window.addEventListener('keydown', (e) => {
@@ -121,7 +133,7 @@ let pokemonRepository = (function () {
         alert('not confirmed');
       });
     });
-    
+
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
