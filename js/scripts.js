@@ -79,6 +79,29 @@ let pokemonRepository = (function () {
       }  
     }
     
+    function showDialog(title, text) {
+      showModal(title, text);
+    
+      // We have defined modalContainer here
+      let modalContainer = document.querySelector('#modal-container');
+    
+      // We want to add a confirm and cancel button to the modal
+      let modal = modalContainer.querySelector('.modal');
+    
+      let confirmButton = document.createElement('button');
+      confirmButton.classList.add('modal-confirm');
+      confirmButton.innerText = 'Confirm';
+    
+      let cancelButton = document.createElement('button');
+      cancelButton.classList.add('modal-cancel');
+      cancelButton.innerText = 'Cancel';
+    
+      modal.appendChild(confirmButton);
+      modal.appendChild(cancelButton);
+    
+      // We want to focus the confirmButton so that the user can simply press Enter
+    }
+
     window.addEventListener('keydown', (e) => {
       let modalContainer = document.querySelector('#modal-container');
       if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
