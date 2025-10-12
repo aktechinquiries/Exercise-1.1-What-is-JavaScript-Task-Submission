@@ -114,6 +114,10 @@ let pokemonRepository = (function () {
       showModal('Modal title', 'This is the modal content!');
     });
 
+    document.querySelector('#show-dialog').addEventListener('click', () => {
+      showDialog('Confirm action', 'Are you sure you want to do this?');
+    });    
+
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
