@@ -1,25 +1,22 @@
 let pokemonRepository = (function () {
-    let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    function add(pokemon) {
-        if (
-          typeof pokemon === "object" &&
-          "name" in pokemon &&
-          "detailsURL" in pokemon
-        ) {
-            pokemonList.push(pokemon);
-        } else {
-            console.log("Pokemon is not correct");
-        }  
-    }
+  let pokemonList = [];
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-    function add(pokemon) {
-        pokemonList.push(pokemon);
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "detailsUrl" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Pokemon is not correct");
     }
+  }
 
-    function getAll() {
-        return pokemonList;
-    }
+  function getAll() {
+    return pokemonList;
+  }
 
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
